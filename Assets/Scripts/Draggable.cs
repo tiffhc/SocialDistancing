@@ -5,41 +5,42 @@ using UnityEngine.EventSystems;
 
 public class Draggable : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
-    private bool selected;
 
-    void Update()
-    {
-        if (selected == true)
-        {
-            Vector2 cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            transform.position = new Vector2(cursorPos.x, cursorPos.y);
-        }
-    }
+    private RectTransform rectTransformObj;
+    [SerializeField] private Canvas canvas;
+    public static Vector3 originalPos;
+    private CanvasGroup canvasGroup;
 
-    public void OnMouseOver()
+    void Start()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            selected = true;               
-        }
+        rectTransformObj = GetComponent<RectTransform>();
+        originalPos = transform.position;
+        canvasGroup = GetComponent<CanvasGroup>();
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        
+        Debug.Log("onpointerdown");
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
         Debug.Log("onbegindrag");
+        canvasGroup.alpha = .8f;
+        canvasGroup.blocksRaycasts = false;
     }
     public void OnDrag(PointerEventData eventData)
     {
         Debug.Log("ondrag");
+        //Debug.Log(rectTransformObj.anchoredPosition);
+        rectTransformObj.anchoredPosition += eventData.delta / canvas.scaleFactor;
     }
     public void OnEndDrag(PointerEventData eventData)
     {
         Debug.Log("onenddrag");
+        canvasGroup.alpha = 1f;
+        canvasGroup.blocksRaycasts = true;
+        transform.position = originalPos;
     }
 
 }

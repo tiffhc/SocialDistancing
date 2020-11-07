@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 
 public class DropControl : MonoBehaviour, IDropHandler
 {
+    public GameObject animationSlot;
     public Sprite chessGame;
     void Start()
     {
@@ -15,6 +16,13 @@ public class DropControl : MonoBehaviour, IDropHandler
     public void OnDrop(PointerEventData eventData)
     {
         Debug.Log("on drop");
+        //eventData.pointerDrag.transform.position = Draggable.originalPos;
+        Debug.Log(eventData.pointerDrag.name);
+        if (eventData.pointerDrag.name == "Chessboard")
+        {
+            animationSlot.SetActive(true);
+            animationSlot.GetComponent<Image>().sprite = chessGame;
+        }
     }
 
     
