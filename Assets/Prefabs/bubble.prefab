@@ -108,4 +108,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73955e93bdb5c5240b5eb870240a0951, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chessGame: {fileID: 21300000, guid: 1997c541d094a9d4bbb2621bc09cf9dd, type: 3}
+  animationSlot: {fileID: 0}
+  chessGame: {fileID: 21300000, guid: 44a20bd4bcc2ae342aeada9bd7acda0a, type: 3}

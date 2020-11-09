@@ -263,7 +263,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 312.1301, y: -206.50002}
+  m_AnchoredPosition: {x: 311.23016, y: -215.3}
   m_SizeDelta: {x: 1015, y: 241}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &173461913
@@ -352,7 +352,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 369.8, y: -249.4}
+  m_AnchoredPosition: {x: 368.90005, y: -258.19998}
   m_SizeDelta: {x: 174.37286, y: 95.11246}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &492509049
@@ -968,7 +968,7 @@ GameObject:
   - component: {fileID: 1760683577}
   - component: {fileID: 1760683576}
   m_Layer: 5
-  m_Name: Son
+  m_Name: son
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1063,7 +1063,7 @@ GameObject:
   - component: {fileID: 1815891307}
   - component: {fileID: 1815891306}
   m_Layer: 5
-  m_Name: Daughter
+  m_Name: daughter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1233,7 +1233,7 @@ GameObject:
   - component: {fileID: 1939973123}
   - component: {fileID: 1939973122}
   m_Layer: 5
-  m_Name: Mom
+  m_Name: mom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1567,7 +1567,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 287, y: -288}
+  m_AnchoredPosition: {x: 286.1, y: -296.8}
   m_SizeDelta: {x: 729, y: 108}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2037291515
@@ -1620,6 +1620,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1069835632}
     m_Modifications:
+    - target: {fileID: 1214519630937888999, guid: 19dfe08d9a287c8468a21ab1943e94aa, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1214519630937889000, guid: 19dfe08d9a287c8468a21ab1943e94aa, type: 3}
       propertyPath: m_Name
       value: mom_bubble
