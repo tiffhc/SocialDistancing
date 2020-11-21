@@ -8,13 +8,12 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, 
 
     private RectTransform rectTransformObj;
     [SerializeField] private Canvas canvas;
-    public static Vector3 originalPos;
+    [SerializeField] private Vector3 originalPos;
     private CanvasGroup canvasGroup;
 
     void Start()
     {
         rectTransformObj = GetComponent<RectTransform>();
-        originalPos = transform.position;
         canvasGroup = GetComponent<CanvasGroup>();
     }
 
@@ -40,6 +39,7 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, 
         Debug.Log("onenddrag");
         canvasGroup.alpha = 1f;
         canvasGroup.blocksRaycasts = true;
+        Debug.Log(originalPos);
         transform.position = originalPos;
     }
 
