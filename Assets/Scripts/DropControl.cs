@@ -258,8 +258,10 @@ public class DropControl : MonoBehaviour, IDropHandler
     {
         GameObject.Find(obj).GetComponent<Image>().enabled = false;
         coroutine = WaitEnablingObj(eventTime, obj);
-
-        StartCoroutine(coroutine);
+        if (droppedObjName != "Hotpot")
+        {
+            StartCoroutine(coroutine);
+        }
     }
 
     void disableChar(string character)
@@ -298,16 +300,17 @@ public class DropControl : MonoBehaviour, IDropHandler
         }
         string char_bubble = character + "_bubble";
         GameObject.Find(char_bubble).GetComponent<Image>().enabled = true;
+        if (numEventsUnlocked >= 9)
+        {
+            hotPotClue.SetActive(true);
+        }
     }
 
     private IEnumerator WaitEnablingObj(float waitTime, string obj)
     {
         yield return new WaitForSeconds(waitTime);
         GameObject.Find(obj).GetComponent<Image>().enabled = true;
-        if (numEventsUnlocked >= 9)
-        {
-            hotPotClue.SetActive(true);
-        }
+        
     }
 
 
