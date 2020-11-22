@@ -18,6 +18,9 @@ public class DropControl : MonoBehaviour, IDropHandler
     public GameObject teaEvent;
     public GameObject travellingEvent;
 
+    public Narrative narrative;
+    private string[] currentNarrative;
+
     public Animator TV;
 
     private bool[] charactersInvolvedBool;
@@ -27,7 +30,7 @@ public class DropControl : MonoBehaviour, IDropHandler
     private GameObject droppedObj;
     private string droppedObjName;
     private GameObject eventObj;
-    private static float eventTime = 5.0f;
+    private static float eventTime = 10.0f;
     private bool rightBubble;
     [SerializeField] private string bubbleType;
 
@@ -72,6 +75,7 @@ public class DropControl : MonoBehaviour, IDropHandler
         {
             if (bubbleType != "grandma")
             {
+                currentNarrative = narrative.chessNarrative;
                 rightBubble = true;
                 charactersInvolvedBool = new bool[] { false, true, true, true, true };
                 disableObj("Study");
@@ -85,6 +89,7 @@ public class DropControl : MonoBehaviour, IDropHandler
         {
             if (bubbleType == "grandma" | bubbleType == "dad")
             {
+                currentNarrative = narrative.catNarrative;
                 charactersInvolvedBool = new bool[] { true, false, true, false, false };
                 rightBubble = true;
                 eventObj = catEvent;
@@ -95,6 +100,7 @@ public class DropControl : MonoBehaviour, IDropHandler
         {
             if (bubbleType != "grandma")
             {
+                currentNarrative = narrative.danceNarrative;
                 rightBubble = true;
                 charactersInvolvedBool = new bool[] { false, true, true, true, true };
                 eventObj = danceEvent;
@@ -106,8 +112,8 @@ public class DropControl : MonoBehaviour, IDropHandler
         {
             //Audio for hotpot scene
             m.theme.clip = m.hotpot;
-            m.theme.Play(); 
-
+            m.theme.Play();
+            currentNarrative = narrative.hotpotNarrative;
             rightBubble = true;
             charactersInvolvedBool = new bool[] { true, true, true, true, true };
             disableObj("Hotpot");
@@ -119,6 +125,7 @@ public class DropControl : MonoBehaviour, IDropHandler
         {
             if (bubbleType == "grandma" | bubbleType == "mom")
             {
+                currentNarrative = narrative.plantNarrative;
                 charactersInvolvedBool = new bool[] { true, true, false, false, false };
                 disableObj("Remote");
                 rightBubble = true;
@@ -130,6 +137,7 @@ public class DropControl : MonoBehaviour, IDropHandler
         {
             if (bubbleType == "daughter"| bubbleType == "son")
             {
+                currentNarrative = narrative.TVNarrative;
                 charactersInvolvedBool = new bool[] { false, false, false, true, true };
                 //TV.sprite = TVOff;
                 TV.SetBool("tvOff", true);
@@ -142,6 +150,7 @@ public class DropControl : MonoBehaviour, IDropHandler
         {
             if (bubbleType != "mom" && bubbleType != "daughter")
             {
+                currentNarrative = narrative.snackNarrative;
                 charactersInvolvedBool = new bool[] { true, false, true, false, true };
                 rightBubble = true;
                 eventObj = snackEvent;
@@ -153,6 +162,7 @@ public class DropControl : MonoBehaviour, IDropHandler
         {
             if (bubbleType == "daughter"| bubbleType == "son")
             {
+                currentNarrative = narrative.studyNarrative;
                 charactersInvolvedBool = new bool[] { false, false, false, true, true };
                 disableObj("Teaset");
                 rightBubble = true;
@@ -165,6 +175,7 @@ public class DropControl : MonoBehaviour, IDropHandler
         {
             if (bubbleType == "grandma" | bubbleType == "daughter")
             {
+                currentNarrative = narrative.teaNarrative;
                 charactersInvolvedBool = new bool[] { true, false, false, true, false };
                 rightBubble = true;
                 eventObj = teaEvent;
@@ -176,7 +187,7 @@ public class DropControl : MonoBehaviour, IDropHandler
         {
             if (bubbleType != "grandma" && bubbleType != "dad")
             {
-                
+                currentNarrative = narrative.travellingNarrative;
                 charactersInvolvedBool = new bool[] { false, true, false, true, true };
                 disableObj("Remote");
                 rightBubble = true;
@@ -198,6 +209,9 @@ public class DropControl : MonoBehaviour, IDropHandler
                 droppedObj.GetComponent<CanvasGroup>().alpha = 0;
             }
             updateCharacter();
+            narrative.resetCounter();
+            
+            narrative.displayNarrative(currentNarrative);
             //Debug.Log("right bubble");
             eventObj.SetActive(true);
             coroutine = Wait(eventTime, eventObj);
@@ -233,7 +247,10 @@ public class DropControl : MonoBehaviour, IDropHandler
             //TV.sprite = TVOn;
             TV.SetBool("tvOff", false);
         }
-        eventObj.SetActive(false);
+        if (droppedObjName != "Hotpot")
+        {
+            eventObj.SetActive(false);
+        }
         rightBubble = false;
     }
 
@@ -241,6 +258,7 @@ public class DropControl : MonoBehaviour, IDropHandler
     {
         GameObject.Find(obj).GetComponent<Image>().enabled = false;
         coroutine = WaitEnablingObj(eventTime, obj);
+
         StartCoroutine(coroutine);
     }
 
@@ -262,8 +280,12 @@ public class DropControl : MonoBehaviour, IDropHandler
         string char_bubble = character + "_bubble";
         GameObject.Find(char_bubble).GetComponent<Image>().enabled = false;
 
-        coroutine = WaitEnabling(eventTime, character);
-        StartCoroutine(coroutine);
+        if (droppedObjName != "Hotpot")
+        {
+            coroutine = WaitEnabling(eventTime, character);
+            StartCoroutine(coroutine);
+        }
+        
     }
 
     private IEnumerator WaitEnabling(float waitTime,  string character)
