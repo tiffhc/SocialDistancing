@@ -252,6 +252,15 @@ public class DropControl : MonoBehaviour, IDropHandler
         if (character != "dad")
         {
             GameObject.Find(character).GetComponent<Image>().enabled = false;
+            float alphaVar = 0.25f;
+            //Find the grayscale image and disable them too
+            if (character == "son" | character == "daughter")
+            {
+                alphaVar = 0.17f;
+            }
+            GameObject.Find(character).transform.GetChild(0).GetComponent<CanvasGroup>().alpha -= alphaVar;
+            //GameObject.Find(character).GetComponentInChildren<Image>().enabled = false;
+            GameObject.Find(character).transform.GetChild(0).GetComponent<Image>().enabled = false;
         }
         string char_bubble = character + "_bubble";
         GameObject.Find(char_bubble).GetComponent<Image>().enabled = false;
@@ -266,6 +275,7 @@ public class DropControl : MonoBehaviour, IDropHandler
         if (character != "dad")
         {
             GameObject.Find(character).GetComponent<Image>().enabled = true;
+            GameObject.Find(character).transform.GetChild(0).GetComponent<Image>().enabled = true;
         }
         string char_bubble = character + "_bubble";
         GameObject.Find(char_bubble).GetComponent<Image>().enabled = true;
