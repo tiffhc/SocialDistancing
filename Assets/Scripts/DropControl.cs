@@ -18,10 +18,6 @@ public class DropControl : MonoBehaviour, IDropHandler
     public GameObject teaEvent;
     public GameObject travellingEvent;
 
-    //public Sprite TVOff;
-    //public Sprite TVOn;
-    //public Image TV;
-
     public Animator TV;
 
     private bool[] charactersInvolvedBool;
@@ -46,6 +42,7 @@ public class DropControl : MonoBehaviour, IDropHandler
     public MusicBox m;
 
     public static int numEventsUnlocked = 0;
+    public GameObject hotPotClue;
 
     bool theme1 = true;
     bool theme2 = false;
@@ -59,7 +56,7 @@ public class DropControl : MonoBehaviour, IDropHandler
         // grandma, mom, dad, daughter, son
         charactersInvolved = new string[] {"grandma", "mom", "dad", "daughter", "son"};
         charactersInvolvedBool = new bool[] {false, false, false, false, false};
-
+        hotPotClue.SetActive(false);
         sfx = this.GetComponent<AudioSource>(); 
     }
 
@@ -285,6 +282,10 @@ public class DropControl : MonoBehaviour, IDropHandler
     {
         yield return new WaitForSeconds(waitTime);
         GameObject.Find(obj).GetComponent<Image>().enabled = true;
+        if (numEventsUnlocked >= 9)
+        {
+            hotPotClue.SetActive(true);
+        }
     }
 
 
