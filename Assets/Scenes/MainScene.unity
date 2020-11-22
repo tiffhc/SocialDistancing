@@ -329,7 +329,7 @@ PrefabInstance:
     - target: {fileID: 8955203114287216896, guid: 19dfe08d9a287c8468a21ab1943e94aa, type: 3}
       propertyPath: good
       value: 
-      objectReference: {fileID: 8300000, guid: 627b01593e1e77f4fb30e510034f8d9b, type: 3}
+      objectReference: {fileID: 8300000, guid: 03abd6f40e400054685fb07423d7b374, type: 3}
     - target: {fileID: 8955203114287216896, guid: 19dfe08d9a287c8468a21ab1943e94aa, type: 3}
       propertyPath: bad
       value: 
@@ -2398,7 +2398,7 @@ PrefabInstance:
     - target: {fileID: 8955203114287216896, guid: 19dfe08d9a287c8468a21ab1943e94aa, type: 3}
       propertyPath: good
       value: 
-      objectReference: {fileID: 8300000, guid: 627b01593e1e77f4fb30e510034f8d9b, type: 3}
+      objectReference: {fileID: 8300000, guid: 03abd6f40e400054685fb07423d7b374, type: 3}
     - target: {fileID: 8955203114287216896, guid: 19dfe08d9a287c8468a21ab1943e94aa, type: 3}
       propertyPath: bad
       value: 
@@ -3919,7 +3919,7 @@ PrefabInstance:
     - target: {fileID: 8955203114287216896, guid: 19dfe08d9a287c8468a21ab1943e94aa, type: 3}
       propertyPath: good
       value: 
-      objectReference: {fileID: 8300000, guid: 627b01593e1e77f4fb30e510034f8d9b, type: 3}
+      objectReference: {fileID: 8300000, guid: 03abd6f40e400054685fb07423d7b374, type: 3}
     - target: {fileID: 8955203114287216896, guid: 19dfe08d9a287c8468a21ab1943e94aa, type: 3}
       propertyPath: bad
       value: 
@@ -5737,7 +5737,7 @@ PrefabInstance:
     - target: {fileID: 8955203114287216896, guid: 19dfe08d9a287c8468a21ab1943e94aa, type: 3}
       propertyPath: good
       value: 
-      objectReference: {fileID: 8300000, guid: 627b01593e1e77f4fb30e510034f8d9b, type: 3}
+      objectReference: {fileID: 8300000, guid: 03abd6f40e400054685fb07423d7b374, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19dfe08d9a287c8468a21ab1943e94aa, type: 3}
 --- !u!1 &1976691479
@@ -6646,7 +6646,7 @@ PrefabInstance:
     - target: {fileID: 8955203114287216896, guid: 19dfe08d9a287c8468a21ab1943e94aa, type: 3}
       propertyPath: good
       value: 
-      objectReference: {fileID: 8300000, guid: 627b01593e1e77f4fb30e510034f8d9b, type: 3}
+      objectReference: {fileID: 8300000, guid: 03abd6f40e400054685fb07423d7b374, type: 3}
     - target: {fileID: 8955203114287216896, guid: 19dfe08d9a287c8468a21ab1943e94aa, type: 3}
       propertyPath: bad
       value: 
