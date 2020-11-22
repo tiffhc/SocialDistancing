@@ -18,6 +18,8 @@ public class DropControl : MonoBehaviour, IDropHandler
     public GameObject teaEvent;
     public GameObject travellingEvent;
 
+    public SceneController sceneController;
+
     public Narrative narrative;
     private string[] currentNarrative;
 
@@ -59,7 +61,7 @@ public class DropControl : MonoBehaviour, IDropHandler
         // grandma, mom, dad, daughter, son
         charactersInvolved = new string[] {"grandma", "mom", "dad", "daughter", "son"};
         charactersInvolvedBool = new bool[] {false, false, false, false, false};
-        hotPotClue.SetActive(false);
+        //hotPotClue.SetActive(false);
         sfx = this.GetComponent<AudioSource>(); 
     }
 
@@ -216,12 +218,22 @@ public class DropControl : MonoBehaviour, IDropHandler
             eventObj.SetActive(true);
             coroutine = Wait(eventTime, eventObj);
             StartCoroutine(coroutine);
+            if (droppedObjName == "Hotpot")
+            {
+                StartCoroutine(WaitMainMenu(18f, "MenuScene"));
+            }
         }
         else
         {
             sfx.PlayOneShot(bad);
         }
 
+    }
+
+    IEnumerator WaitMainMenu(float waitTime, string scene)
+    {
+        yield return new WaitForSeconds(waitTime);
+        sceneController.loadscene(scene);
     }
 
     void updateCharacter()
