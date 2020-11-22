@@ -6467,6 +6467,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   theme: {fileID: 2135409927}
   maintheme: {fileID: 8300000, guid: 5d2a2db8712aeee41bcfe058ea2904de, type: 3}
+  maintheme2: {fileID: 8300000, guid: 83221de53945c9e4393079dc22b59e18, type: 3}
+  maintheme3: {fileID: 8300000, guid: 29406f39c55231b499661fc15f06ac27, type: 3}
+  maintheme4: {fileID: 8300000, guid: 07d69586543647a4e9d1acbca768776b, type: 3}
   hotpot: {fileID: 8300000, guid: 5ad64c21931efc548b5ace37d25e2386, type: 3}
 --- !u!1001 &1214519629807472142
 PrefabInstance:

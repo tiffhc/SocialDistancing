@@ -43,7 +43,15 @@ public class DropControl : MonoBehaviour, IDropHandler
 
     //Theme audios
 
-    public MusicBox m; 
+    public MusicBox m;
+
+    public static int numEventsUnlocked = 0;
+
+    bool theme1 = true;
+    bool theme2 = false;
+    bool theme3 = false;
+    bool theme4 = false; 
+
 
     void Start()
     {
@@ -185,13 +193,15 @@ public class DropControl : MonoBehaviour, IDropHandler
         if (rightBubble)
         {
             sfx.PlayOneShot(good);
+            numEventsUnlocked++; //increment the number of events found 
+            Debug.Log(numEventsUnlocked); 
 
             if (droppedObjName != "Speaker" && droppedObjName != "Snack")
             {
                 droppedObj.GetComponent<CanvasGroup>().alpha = 0;
             }
             updateCharacter();
-            Debug.Log("right bubble");
+            //Debug.Log("right bubble");
             eventObj.SetActive(true);
             coroutine = Wait(eventTime, eventObj);
             StartCoroutine(coroutine);
@@ -268,12 +278,45 @@ public class DropControl : MonoBehaviour, IDropHandler
     }
 
 
-
-
-
     // Update is called once per frame
     void Update()
     {
-        
+        if((numEventsUnlocked >= 3)&&(numEventsUnlocked <= 5))
+        {
+            //Debug.Log("Playing theme2");
+            if (!theme2)
+            {
+                //Debug.Log("Playing theme2222");
+                m.theme.clip = m.maintheme2;
+                m.theme.Play();
+                theme2 = true;
+                theme1 = false; 
+            }
+        }
+
+        if((numEventsUnlocked >= 6)&&(numEventsUnlocked <= 7))
+        {
+            if(!theme3)
+            {
+                m.theme.clip = m.maintheme3;
+                m.theme.Play();
+
+                theme3 = true; 
+                theme2 = false; 
+            }
+        }
+
+        if((numEventsUnlocked >= 8)&&(numEventsUnlocked <= 10))
+        {
+            if(!theme4)
+            {
+                m.theme.clip = m.maintheme4;
+                m.theme.Play();
+
+                theme3 = false;
+                theme4 = true; 
+            }
+        }
     }
+    
 }
