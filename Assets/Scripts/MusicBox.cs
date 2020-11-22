@@ -4,19 +4,18 @@ using UnityEngine;
 
 public class MusicBox : MonoBehaviour
 {
-    AudioSource[] audios; //[0] is for themes, [1] is for sfx
-    public AudioSource sfx; 
-   // public AudioClip mainTheme;
-    public AudioClip goodSound;
-    public AudioClip badSound; 
-
+    public AudioSource theme;
+    public AudioClip maintheme;
+    public AudioClip hotpot; 
+  
     // Start is called before the first frame update
     void Start()
     {
-        audios = this.GetComponents<AudioSource>();
-        audios[0].loop = true;
-        audios[0].Play();
-        sfx = audios[1]; 
+        theme = this.GetComponent<AudioSource>();
+
+        theme.loop = true;
+        theme.PlayOneShot(maintheme); 
+
     }
 
     // Update is called once per frame

@@ -39,7 +39,11 @@ public class DropControl : MonoBehaviour, IDropHandler
     //Audio 
     AudioSource sfx;
     public AudioClip good;
-    public AudioClip bad; 
+    public AudioClip bad;
+
+    //Theme audios
+
+    MusicBox m; 
 
     void Start()
     {
@@ -111,7 +115,10 @@ public class DropControl : MonoBehaviour, IDropHandler
 
         else if (droppedObjName == "Hotpot")
         {
+            //Audio for hotpot scene
             sfx.PlayOneShot(good);
+            m.theme.PlayOneShot(m.hotpot); 
+
             rightBubble = true;
             charactersInvolvedBool = new bool[] { true, true, true, true, true };
             disableObj("Hotpot");
