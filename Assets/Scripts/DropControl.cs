@@ -83,9 +83,14 @@ public class DropControl : MonoBehaviour, IDropHandler
         {
             if (bubbleType == "grandma" | bubbleType == "dad")
             {
+                sfx.PlayOneShot(good);
                 charactersInvolvedBool = new bool[] { true, false, true, false, false };
                 rightBubble = true;
                 eventObj = catEvent;
+            }
+            else
+            {
+                sfx.PlayOneShot(bad); 
             }
         }
 
@@ -93,14 +98,20 @@ public class DropControl : MonoBehaviour, IDropHandler
         {
             if (bubbleType != "grandma")
             {
+                sfx.PlayOneShot(good);
                 rightBubble = true;
                 charactersInvolvedBool = new bool[] { false, true, true, true, true };
                 eventObj = danceEvent;
+            }
+            else
+            {
+                sfx.PlayOneShot(bad); 
             }
         }
 
         else if (droppedObjName == "Hotpot")
         {
+            sfx.PlayOneShot(good);
             rightBubble = true;
             charactersInvolvedBool = new bool[] { true, true, true, true, true };
             disableObj("Hotpot");
@@ -112,10 +123,15 @@ public class DropControl : MonoBehaviour, IDropHandler
         {
             if (bubbleType == "grandma" | bubbleType == "mom")
             {
+                sfx.PlayOneShot(good);
                 charactersInvolvedBool = new bool[] { true, true, false, false, false };
                 disableObj("Remote");
                 rightBubble = true;
                 eventObj = plantEvent;
+            }
+            else
+            {
+                sfx.PlayOneShot(bad); 
             }
         }
 
@@ -123,11 +139,16 @@ public class DropControl : MonoBehaviour, IDropHandler
         {
             if (bubbleType == "daughter"| bubbleType == "son")
             {
+                sfx.PlayOneShot(good);
                 charactersInvolvedBool = new bool[] { false, false, false, true, true };
                 //TV.sprite = TVOff;
                 TV.SetBool("tvOff", true);
                 rightBubble = true;
                 eventObj = remoteEvent;
+            }
+            else
+            {
+                sfx.PlayOneShot(bad);
             }
         }
 
@@ -135,9 +156,14 @@ public class DropControl : MonoBehaviour, IDropHandler
         {
             if (bubbleType != "mom" && bubbleType != "daughter")
             {
+                sfx.PlayOneShot(good);
                 charactersInvolvedBool = new bool[] { true, false, true, false, true };
                 rightBubble = true;
                 eventObj = snackEvent;
+            }
+            else
+            {
+                sfx.PlayOneShot(bad);
             }
         }
 
@@ -145,10 +171,15 @@ public class DropControl : MonoBehaviour, IDropHandler
         {
             if (bubbleType == "daughter"| bubbleType == "son")
             {
+                sfx.PlayOneShot(good);
                 charactersInvolvedBool = new bool[] { false, false, false, true, true };
                 disableObj("Teaset");
                 rightBubble = true;
                 eventObj = studyingEvent;
+            }
+            else
+            {
+                sfx.PlayOneShot(bad);
             }
         }
 
@@ -156,9 +187,14 @@ public class DropControl : MonoBehaviour, IDropHandler
         {
             if (bubbleType == "grandma" | bubbleType == "daughter")
             {
+                sfx.PlayOneShot(good);
                 charactersInvolvedBool = new bool[] { true, false, false, true, false };
                 rightBubble = true;
                 eventObj = teaEvent;
+            }
+            else
+            {
+                sfx.PlayOneShot(bad);
             }
         }
         
@@ -166,10 +202,16 @@ public class DropControl : MonoBehaviour, IDropHandler
         {
             if (bubbleType != "grandma" && bubbleType != "dad")
             {
+                sfx.PlayOneShot(good);
                 charactersInvolvedBool = new bool[] { false, true, false, true, true };
                 disableObj("Remote");
                 rightBubble = true;
                 eventObj = travellingEvent;
+
+            }
+            else
+            {
+                sfx.PlayOneShot(bad);
             }
         }
 
