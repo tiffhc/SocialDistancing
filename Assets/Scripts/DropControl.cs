@@ -36,12 +36,19 @@ public class DropControl : MonoBehaviour, IDropHandler
     [SerializeField] private string bubbleType;
 
 
+    //Audio 
+    AudioSource sfx;
+    public AudioClip good;
+    public AudioClip bad; 
+
     void Start()
     {
         rightBubble = false;
         // grandma, mom, dad, daughter, son
         charactersInvolved = new string[] {"grandma", "mom", "dad", "daughter", "son"};
         charactersInvolvedBool = new bool[] {false, false, false, false, false};
+
+        sfx = this.GetComponent<AudioSource>(); 
     }
 
     public void OnDrop(PointerEventData eventData)
@@ -54,13 +61,22 @@ public class DropControl : MonoBehaviour, IDropHandler
 
         if (droppedObjName == "Chessboard")
         {
+            if(bubbleType == "grandma")
+            {
+                sfx.PlayOneShot(bad); 
+
+            }
             if (bubbleType != "grandma")
             {
+                sfx.PlayOneShot(good); 
+
                 rightBubble = true;
                 charactersInvolvedBool = new bool[] { false, true, true, true, true };
                 disableObj("Study");
                 eventObj = chessEvent;
             }
+            
+
         }
 
         else if (droppedObjName == "Cat")
