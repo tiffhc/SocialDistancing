@@ -111,8 +111,8 @@ public class DropControl : MonoBehaviour, IDropHandler
         else if (droppedObjName == "Hotpot")
         {
             //Audio for hotpot scene
-            m.theme.clip = m.hotpot;
-            m.theme.Play();
+            m.theme4.clip = m.hotpot;
+            m.theme4.Play();
             currentNarrative = narrative.hotpotNarrative;
             rightBubble = true;
             charactersInvolvedBool = new bool[] { true, true, true, true, true };
@@ -323,10 +323,15 @@ public class DropControl : MonoBehaviour, IDropHandler
             if (!theme2)
             {
                 //Debug.Log("Playing theme2222");
-                m.theme.clip = m.maintheme2;
+                /*m.theme.clip = m.maintheme2;
                 m.theme.Play();
+                 */
+
                 theme2 = true;
-                theme1 = false; 
+                theme1 = false;
+
+                m.theme1.volume = 0.0f;
+                m.theme2.volume = 0.2f; 
             }
         }
 
@@ -334,11 +339,15 @@ public class DropControl : MonoBehaviour, IDropHandler
         {
             if(!theme3)
             {
-                m.theme.clip = m.maintheme3;
-                m.theme.Play();
+                /* m.theme.clip = m.maintheme3;
+                m.theme.Play(); */
 
                 theme3 = true; 
-                theme2 = false; 
+                theme2 = false;
+
+                m.theme2.volume = 0.0f;
+                m.theme3.volume = 0.2f; 
+
             }
         }
 
@@ -346,11 +355,14 @@ public class DropControl : MonoBehaviour, IDropHandler
         {
             if(!theme4)
             {
-                m.theme.clip = m.maintheme4;
-                m.theme.Play();
+                /*m.theme.clip = m.maintheme4;
+                m.theme.Play(); */ 
 
                 theme3 = false;
-                theme4 = true; 
+                theme4 = true;
+
+                m.theme3.volume = 0.0f;
+                m.theme4.volume = 0.2f; 
             }
         }
     }
