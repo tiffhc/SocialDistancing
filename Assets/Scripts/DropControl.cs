@@ -43,7 +43,7 @@ public class DropControl : MonoBehaviour, IDropHandler
 
     //Theme audios
 
-    MusicBox m; 
+    public MusicBox m; 
 
     void Start()
     {

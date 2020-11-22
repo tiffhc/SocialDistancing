@@ -14,7 +14,8 @@ public class MusicBox : MonoBehaviour
         theme = this.GetComponent<AudioSource>();
 
         theme.loop = true;
-        theme.PlayOneShot(maintheme); 
+        theme.clip = maintheme;
+        theme.Play(); 
 
     }
 

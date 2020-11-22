@@ -334,6 +334,10 @@ PrefabInstance:
       propertyPath: bad
       value: 
       objectReference: {fileID: 8300000, guid: 1838e170d7e454e4dab139ed0d200298, type: 3}
+    - target: {fileID: 8955203114287216896, guid: 19dfe08d9a287c8468a21ab1943e94aa, type: 3}
+      propertyPath: m
+      value: 
+      objectReference: {fileID: 2135409929}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19dfe08d9a287c8468a21ab1943e94aa, type: 3}
 --- !u!1 &60656416 stripped
@@ -2403,6 +2407,10 @@ PrefabInstance:
       propertyPath: bad
       value: 
       objectReference: {fileID: 8300000, guid: 1838e170d7e454e4dab139ed0d200298, type: 3}
+    - target: {fileID: 8955203114287216896, guid: 19dfe08d9a287c8468a21ab1943e94aa, type: 3}
+      propertyPath: m
+      value: 
+      objectReference: {fileID: 2135409929}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19dfe08d9a287c8468a21ab1943e94aa, type: 3}
 --- !u!1001 &1065595507
@@ -3924,6 +3932,10 @@ PrefabInstance:
       propertyPath: bad
       value: 
       objectReference: {fileID: 8300000, guid: 1838e170d7e454e4dab139ed0d200298, type: 3}
+    - target: {fileID: 8955203114287216896, guid: 19dfe08d9a287c8468a21ab1943e94aa, type: 3}
+      propertyPath: m
+      value: 
+      objectReference: {fileID: 2135409929}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19dfe08d9a287c8468a21ab1943e94aa, type: 3}
 --- !u!224 &1647040122 stripped
@@ -5738,6 +5750,10 @@ PrefabInstance:
       propertyPath: good
       value: 
       objectReference: {fileID: 8300000, guid: 03abd6f40e400054685fb07423d7b374, type: 3}
+    - target: {fileID: 8955203114287216896, guid: 19dfe08d9a287c8468a21ab1943e94aa, type: 3}
+      propertyPath: m
+      value: 
+      objectReference: {fileID: 2135409929}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19dfe08d9a287c8468a21ab1943e94aa, type: 3}
 --- !u!1 &1976691479
@@ -6449,7 +6465,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26c45459ff3f86549b2a81ebdf3a4248, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  theme: {fileID: 0}
+  theme: {fileID: 2135409927}
   maintheme: {fileID: 8300000, guid: 5d2a2db8712aeee41bcfe058ea2904de, type: 3}
   hotpot: {fileID: 8300000, guid: 5ad64c21931efc548b5ace37d25e2386, type: 3}
 --- !u!1001 &1214519629807472142
@@ -6667,6 +6683,10 @@ PrefabInstance:
       propertyPath: bad
       value: 
       objectReference: {fileID: 8300000, guid: 1838e170d7e454e4dab139ed0d200298, type: 3}
+    - target: {fileID: 8955203114287216896, guid: 19dfe08d9a287c8468a21ab1943e94aa, type: 3}
+      propertyPath: m
+      value: 
+      objectReference: {fileID: 2135409929}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19dfe08d9a287c8468a21ab1943e94aa, type: 3}
 --- !u!1001 &8820259230802262117
