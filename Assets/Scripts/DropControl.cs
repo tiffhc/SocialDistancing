@@ -61,7 +61,7 @@ public class DropControl : MonoBehaviour, IDropHandler
         // grandma, mom, dad, daughter, son
         charactersInvolved = new string[] {"grandma", "mom", "dad", "daughter", "son"};
         charactersInvolvedBool = new bool[] {false, false, false, false, false};
-        //hotPotClue.SetActive(false);
+        hotPotClue.SetActive(false);
         sfx = this.GetComponent<AudioSource>(); 
     }
 
